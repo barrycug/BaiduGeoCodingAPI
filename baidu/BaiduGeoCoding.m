@@ -238,7 +238,7 @@
 }
 -(NSString*)buildReverseGeocodingHttpUrl:(CLLocation*)location
 {
-    NSString * url = [NSString stringWithFormat:@"%@?ak=%@&location=%lf,%lf&output=json&pois=1",self.url,self.key,location.coordinate.latitude,location.coordinate.longitude];
+     NSString * url = [NSString stringWithFormat:@"%@?ak=%@&location=%lf,%lf&output=json&pois=0&&coordtype=wgs84ll",self.url,self.key,location.coordinate.latitude,location.coordinate.longitude];
     return url;
 }
 -(void)reverseGeocoding:(CLLocation*)location result:(void (^)(BaiduReverseGeoCodingResult * result,NSError * error))callback
